@@ -1,0 +1,147 @@
+@use '../helpers/' as *;
+
+.main {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: #3e863c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 0;
+    &::after {
+        content: '';
+        display: block;
+        width: 294px;
+        aspect-ratio: 294/215;
+        background: url('/resources/images/sign.png') no-repeat center center/contain;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        //transform: translate(-50%, -50%);
+        z-index: -1;
+    }
+
+    .iphone {
+        width: 473px;
+        aspect-ratio: 473/932;
+        padding: 30px;
+        border-radius: 30px;
+        overflow: hidden;
+        position: relative;
+
+        &::after {
+            content: '';
+            width: 100%;
+            height: 100%;
+            background: url('/resources/images/iphone.webp') no-repeat center center/contain;
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: block;
+            pointer-events: none;
+            z-index: 99;
+        }
+    }
+
+    .content {
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        border-radius: 55px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .widget {
+        position: absolute;
+        left: 0;
+        top: 28px;
+        padding: 0 30px;
+        width: 100%;
+        z-index: 2;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &_icons {
+            display: flex;
+            align-content: center;
+            gap: 8px;
+            padding-right: 15px;
+        }
+
+        #clock {
+            font-size: 20px;
+            font-weight: 600;
+            margin-left: 15px;
+        }
+    }
+
+    .lock {
+        width: 100%;
+        height: 100%;
+        //background: url('/resources/images/lock.jpg') no-repeat center center/cover;
+        background: rgb(133, 133, 133);
+        position: absolute;
+        top: 0;
+        z-index: 1;
+
+        &_wrap {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding-bottom: 35px;
+            position: relative;
+        }
+
+        &_time {
+            position: absolute;
+            left: 50%;
+            top: 155px;
+            transform: translateX(-50%);
+            text-align: center;
+            color: #fff;
+        }
+
+        #lock_date {
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        #lock_clock {
+            font-weight: 800;
+            font-size: 70px;
+        }
+
+        &_btn {
+            color: #fff;
+            font-size: 18px;
+            cursor: pointer;
+            text-shadow: 5px 5px 10px rgba($color: #fff, $alpha: 1), -5px -5px 10px rgba($color: #fff, $alpha: 1);
+            animation: clickHere 1.5s infinite linear;
+        }
+    }
+
+    .menu {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@keyframes clickHere {
+    0% {
+        transform: translateY(0);
+        text-shadow: 5px 5px 10px rgba($color: #fff, $alpha: 1), -5px -5px 10px rgba($color: #fff, $alpha: 1);
+    }
+    50% {
+        transform: translateY(-15px);
+        text-shadow: 5px 5px 50px rgba($color: #fff, $alpha: 1), -5px -5px 50px rgba($color: #fff, $alpha: 0);
+    }
+    100% {
+        transform: translateY(0);
+        text-shadow: 5px 5px 10px rgba($color: #fff, $alpha: 1), -5px -5px 10px rgba($color: #fff, $alpha: 1);
+    }
+}
