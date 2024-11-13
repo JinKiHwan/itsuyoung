@@ -27,14 +27,36 @@ updateTime();
 /* ----------------------- */
 function unLock() {
     const lock = document.querySelector('.lock');
+    const menuList = gsap.utils.toArray('.menu_wrap li');
+
+    console.log(menuList);
+
     const tl = gsap.timeline();
-    tl.to(lock, {
-        filter: 'blur(5px)',
-        duration: 0.5,
-    }).to(lock, {
-        y: '-100%',
-        delay: 0.3,
-        ease: 'power4.inOut',
-        duration: 0.8,
-    });
+    tl.set(menuList, {
+        z: 1000,
+    })
+        .to(lock, {
+            filter: 'blur(5px)',
+            duration: 0.5,
+        })
+        .to(lock, {
+            y: '-100%',
+            delay: 0.3,
+            ease: 'power4.inOut',
+            duration: 0.8,
+        })
+        .to(menuList, {
+            z: 0,
+            ease: 'elastic.out(0.9,0.6)',
+            duration: 1,
+            stagger: {
+                amount: 0.1,
+            },
+        });
 }
+
+$('#menuSafari').click(function () {
+    console.log('13131');
+    $('#safari').load('/menu/safari.html');
+    $('#safari').show();
+});

@@ -4,12 +4,15 @@
     width: 100vw;
     height: 100vh;
     overflow: hidden;
-    background: #3e863c;
+    background: #357453;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
     z-index: 0;
+
+    font-family: apple400;
+
     &::after {
         content: '';
         display: block;
@@ -19,8 +22,18 @@
         position: absolute;
         right: 0;
         bottom: 0;
-        //transform: translate(-50%, -50%);
         z-index: -1;
+    }
+
+    .overlay {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -1;
+        background-image: url('/resources/images/overlay.gif');
+        opacity: 0.05;
     }
 
     .iphone {
@@ -43,15 +56,93 @@
             pointer-events: none;
             z-index: 99;
         }
+
+        &::before {
+            content: '';
+            width: 100%;
+            height: 100%;
+            background: url('/resources/images/iphone.webp') no-repeat center center/contain;
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: block;
+            pointer-events: none;
+            z-index: -10;
+            filter: drop-shadow(2px 4px 6px black);
+        }
     }
 
     .content {
         width: 100%;
         height: 100%;
-        background: #fff;
+        //background: url('/resources/images/main-bg.webp') no-repeat center center / cover;
+        background: #636363;
         border-radius: 55px;
         overflow: hidden;
         position: relative;
+        z-index: 0;
+        &::after {
+            content: '';
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            //backdrop-filter: blur(5px);
+            z-index: -1;
+        }
+
+        .menu {
+            width: 100%;
+            height: 100%;
+            padding-top: 100px;
+            ul {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                padding: 0 30px;
+                gap: 15px;
+                perspective: 1000px;
+
+                li {
+                    width: calc((100% / 4) - 15px);
+                    a {
+                        display: block;
+                        width: 100%;
+                        aspect-ratio: 1/1;
+                        padding: 8px 8px 6px 8px;
+
+                        figure {
+                            width: 100%;
+                            height: 100%;
+                            border-radius: 15px;
+                            overflow: hidden;
+                            transition: all 0.3s;
+
+                            img {
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                            }
+                        }
+
+                        &:hover {
+                            figure {
+                                scale: 0.9;
+                                filter: brightness(0.5);
+                            }
+                        }
+                    }
+
+                    p {
+                        color: #fff;
+                        text-align: center;
+                        margin-bottom: 5px;
+                    }
+                }
+            }
+        }
     }
 
     .widget {
@@ -70,12 +161,14 @@
             align-content: center;
             gap: 8px;
             padding-right: 15px;
+            filter: invert(1);
         }
 
         #clock {
             font-size: 20px;
-            font-weight: 600;
+            font-family: apple600;
             margin-left: 15px;
+            filter: invert(1);
         }
     }
 
@@ -108,11 +201,11 @@
         }
 
         #lock_date {
-            font-weight: 600;
+            font-family: apple600;
             margin-bottom: 15px;
         }
         #lock_clock {
-            font-weight: 800;
+            font-family: apple700;
             font-size: 70px;
         }
 
@@ -144,4 +237,7 @@
         transform: translateY(0);
         text-shadow: 5px 5px 10px rgba($color: #fff, $alpha: 1), -5px -5px 10px rgba($color: #fff, $alpha: 1);
     }
+}
+
+#menuContent {
 }
