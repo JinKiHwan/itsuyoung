@@ -1,46 +1,76 @@
 @use '../helpers/' as *;
 
 .safari {
+  &_top {
+    height: 105px;
+    background: #2f3034;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 0 30px 15px;
+    position: relative;
+    .domain {
+      display: block;
+      text-align: center;
+      color: #fff;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 18px;
+      cursor: text;
+      gap: 5px;
+      &::before {
+        content: '';
+        width: 10px;
+        aspect-ratio: 18/25;
+        background: url('/resources/images/ico-lock.png') no-repeat center center/contain;
+        margin-bottom: 1px;
+      }
+    }
+  }
+
+  &_content {
+    height: 100%;
+    overflow: auto;
+    background: #fff;
+    padding: 15px;
+
     &_top {
-        height: 105px;
-        background: #2f3034;
-        display: flex;
-        align-items: flex-end;
-        justify-content: center;
-        padding: 0 30px 15px;
-        position: relative;
-        .domain {
-            display: block;
-            text-align: center;
-            color: #fff;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 18px;
-            cursor: text;
-            gap: 5px;
-            &::before {
-                content: '';
-                width: 10px;
-                aspect-ratio: 18/25;
-                background: url('/resources/images/ico-lock.png') no-repeat center center/contain;
-                margin-bottom: 1px;
-            }
-        }
+      width: 100%;
+      text-align: center;
+      background: green;
+      font-size: 35px;
+      font-weight: 600;
+      color: #fff;
+      padding: 25px 0 15px;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
     }
-
-    &_content {
-        height: 100%;
-        overflow: auto;
-        background: #fff;
-
-        .box {
-            display: block;
-            width: 300px;
-            aspect-ratio: 1/1;
-            margin: 15px;
-            border: 1px solid #f00;
-        }
+    &_picture {
+      padding: 5px;
+      background: green;
     }
+    &_info {
+      table {
+        width: 100%;
+        font-size: 16px;
+        border-bottom: 5px solid green;
+
+        tr {
+          border-bottom: 1px solid gray;
+        }
+        th {
+          background: green;
+          color: #fff;
+          padding: 5px 2dvh;
+        }
+
+        td {
+          border-right: 5px solid green;
+          padding: 5px 5px 2px 5px;
+        }
+      }
+    }
+  }
 }

@@ -1,20 +1,20 @@
 @use '../helpers/' as *;
 
 .browser {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    //display: none;
-    transform: scale(0) translateY(100%);
-    transform-origin: center bottom;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  //display: none;
+  transform: scale(0) translateY(100%);
+  transform-origin: center bottom;
 
-    &_close {
-        position: absolute;
-        left: 25px;
-        bottom: 15px;
-        color: #208afe;
-        font-size: 18px;
-    }
+  &_close {
+    position: absolute;
+    left: 25px;
+    bottom: 15px;
+    color: #208afe;
+    font-size: 18px;
+  }
 }

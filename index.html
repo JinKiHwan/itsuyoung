@@ -1,139 +1,138 @@
 <!DOCTYPE html>
 <html lang="ko">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-        <title></title>
-        <!-- META -->
-        <meta property="og:title" content="" />
-        <meta property="og:url" content="" />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content="" />
-        <meta property="og:description" content="" />
-        <meta name="description" content="" />
-        <!-- FAVICON -->
-        <link rel="shortcut icon" type="image/x-icon" href="./resources/images/favicon.png" />
-        <link rel="icon" type="image/x-icon" href="./resources/images/favicon.png" />
-        <!-- CSS -->
-        <link rel="stylesheet" href="./resources/css/style.min.css" />
-        <!-- SCRIPT -->
-        <script defer src="https://www.youtube.com/iframe_api"></script>
-        <script defer src="./resources/js/jquery.min.js"></script>
-        <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-        <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-        <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-        <script defer src="./resources/js/common.js"></script>
-    </head>
-    <body>
-        <main class="main">
-            <div class="overlay"></div>
-            <div class="iphone">
-                <div class="content">
-                    <div class="widget">
-                        <div id="clock"></div>
-
-                        <div class="widget_icons">
-                            <figure>
-                                <img src="/resources/images/Cellular.png" alt="" />
-                            </figure>
-                            <figure>
-                                <img src="/resources/images/Wifi.png" alt="" />
-                            </figure>
-                            <figure>
-                                <img src="/resources/images/Battery.png" alt="" />
-                            </figure>
-                        </div>
-                    </div>
-                    <div class="lock" hidden>
-                        <div class="lock_wrap">
-                            <div class="lock_time">
-                                <div id="lock_date"></div>
-                                <div id="lock_clock"></div>
-                            </div>
-                            <div class="lock_btn" onclick="unLock()">Click Here!</div>
-                        </div>
-                    </div>
-                    <div class="menu">
-                        <ul class="menu_wrap">
-                            <li class="menu_list" id="menuSafari">
-                                <a href="javascript:void(0)">
-                                    <figure>
-                                        <img src="/resources/images/Safari.png" alt="" />
-                                    </figure>
-                                </a>
-                                <p>김수영</p>
-                            </li>
-                            <li class="menu_list" id="menuAlbum">
-                                <a href="javascript:void(0)"
-                                    ><figure>
-                                        <img src="/resources/images/Music.png" alt="" /></figure
-                                ></a>
-                                <p>앨범</p>
-                            </li>
-                            <li class="menu_list" id="menuPicture">
-                                <a href="javascript:void(0)"
-                                    ><figure><img src="/resources/images/Photos.png" alt="" /></figure
-                                ></a>
-                                <p>사진</p>
-                            </li>
-                            <li class="menu_list" id="menuContact">
-                                <a href="javascript:void(0)"
-                                    ><figure><img src="/resources/images/Contacts.png" alt="" /></figure
-                                ></a>
-                                <p>연락처</p>
-                            </li>
-                            <li class="menu_list" id="menuLive">
-                                <a href="javascript:void(0)"
-                                    ><figure><img src="/resources/images/live.png" alt="" /></figure
-                                ></a>
-                                <p>라이브</p>
-                            </li>
-                            <li class="">
-                                <a href="https://www.youtube.com/@KimSuyoung" target="_blank"
-                                    ><figure><img src="/resources/images/Youtube.png" alt="" /></figure
-                                ></a>
-                                <p>Youtube</p>
-                            </li>
-                            <li class="">
-                                <a href="https://www.instagram.com/itsuyoung" target="_blank"
-                                    ><figure><img src="/resources/images/instagram.png" alt="" /></figure
-                                ></a>
-                                <p>Instagram</p>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="menu_default">
-                        <ul>
-                            <li>
-                                <a href="#!">
-                                    <img src="/resources/images/Phone.png" alt="" />
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#!">
-                                    <img src="/resources/images/Messages.png" alt="" />
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://open.kakao.com/o/gnLogFK" target="_blank">
-                                    <img src="/resources/images/kakaotalk.png" alt="" />
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#!">
-                                    <img src="/resources/images/Settings.png" alt="" />
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div id="browser" class="browser"></div>
-                </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title></title>
+    <!-- META -->
+    <meta property="og:title" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="" />
+    <meta property="og:description" content="" />
+    <meta name="description" content="" />
+    <!-- FAVICON -->
+    <link rel="shortcut icon" type="image/x-icon" href="./resources/images/favicon.png" />
+    <link rel="icon" type="image/x-icon" href="./resources/images/favicon.png" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="./resources/css/style.min.css" />
+    <!-- SCRIPT -->
+    <script defer src="https://www.youtube.com/iframe_api"></script>
+    <script defer src="./resources/js/jquery.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script defer src="./resources/js/common.js"></script>
+  </head>
+  <body>
+    <main class="main">
+      <div class="overlay"></div>
+      <div class="iphone">
+        <div class="content">
+          <div class="widget">
+            <div id="clock"></div>
+            <div class="widget_icons">
+              <figure>
+                <img src="/resources/images/Cellular.png" alt="" />
+              </figure>
+              <figure>
+                <img src="/resources/images/Wifi.png" alt="" />
+              </figure>
+              <figure>
+                <img src="/resources/images/Battery.png" alt="" />
+              </figure>
             </div>
-        </main>
+          </div>
+          <div class="lock" hidden>
+            <div class="lock_wrap">
+              <div class="lock_time">
+                <div id="lock_date"></div>
+                <div id="lock_clock"></div>
+              </div>
+              <div class="lock_btn" onclick="unLock()">Click Here!</div>
+            </div>
+          </div>
+          <div class="menu">
+            <ul class="menu_wrap">
+              <li class="menu_list" id="menuSafari">
+                <a href="javascript:void(0)">
+                  <figure>
+                    <img src="/resources/images/Safari.png" alt="" />
+                  </figure>
+                </a>
+                <p>김수영</p>
+              </li>
+              <li class="menu_list" id="menuAlbum">
+                <a href="javascript:void(0)"
+                  ><figure>
+                    <img src="/resources/images/Music.png" alt="" /></figure
+                ></a>
+                <p>앨범</p>
+              </li>
+              <li class="menu_list" id="menuPicture">
+                <a href="javascript:void(0)"
+                  ><figure><img src="/resources/images/Photos.png" alt="" /></figure
+                ></a>
+                <p>사진</p>
+              </li>
+              <li class="menu_list" id="menuContact">
+                <a href="javascript:void(0)"
+                  ><figure><img src="/resources/images/Contacts.png" alt="" /></figure
+                ></a>
+                <p>연락처</p>
+              </li>
+              <li class="menu_list" id="menuLive">
+                <a href="javascript:void(0)"
+                  ><figure><img src="/resources/images/live.png" alt="" /></figure
+                ></a>
+                <p>라이브</p>
+              </li>
+              <li class="">
+                <a href="https://www.youtube.com/@KimSuyoung" target="_blank"
+                  ><figure><img src="/resources/images/Youtube.png" alt="" /></figure
+                ></a>
+                <p>Youtube</p>
+              </li>
+              <li class="">
+                <a href="https://www.instagram.com/itsuyoung" target="_blank"
+                  ><figure><img src="/resources/images/instagram.png" alt="" /></figure
+                ></a>
+                <p>Instagram</p>
+              </li>
+            </ul>
+          </div>
 
-        <div id="albumThumb"></div>
-    </body>
+          <div class="menu_default">
+            <ul>
+              <li>
+                <a href="#!">
+                  <img src="/resources/images/Phone.png" alt="" />
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <img src="/resources/images/Messages.png" alt="" />
+                </a>
+              </li>
+              <li>
+                <a href="https://open.kakao.com/o/gnLogFK" target="_blank">
+                  <img src="/resources/images/kakaotalk.png" alt="" />
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <img src="/resources/images/Settings.png" alt="" />
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div id="browser" class="browser"></div>
+        </div>
+      </div>
+    </main>
+
+    <div id="albumThumb"></div>
+  </body>
 </html>
