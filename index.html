@@ -18,8 +18,11 @@
         <!-- CSS -->
         <link rel="stylesheet" href="./resources/css/style.min.css" />
         <!-- SCRIPT -->
+        <script defer src="https://www.youtube.com/iframe_api"></script>
         <script defer src="./resources/js/jquery.min.js"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
         <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
         <script defer src="./resources/js/common.js"></script>
     </head>
     <body>
@@ -53,47 +56,84 @@
                     </div>
                     <div class="menu">
                         <ul class="menu_wrap">
-                            <li id="menuSafari">
-                                <a href="#!">
+                            <li class="menu_list" id="menuSafari">
+                                <a href="javascript:void(0)">
                                     <figure>
                                         <img src="/resources/images/Safari.png" alt="" />
                                     </figure>
                                 </a>
                                 <p>김수영</p>
                             </li>
-                            <li>
-                                <a href="#!"
+                            <li class="menu_list" id="menuAlbum">
+                                <a href="javascript:void(0)"
                                     ><figure>
                                         <img src="/resources/images/Music.png" alt="" /></figure
                                 ></a>
                                 <p>앨범</p>
                             </li>
-                            <li>
-                                <a href="#!"
+                            <li class="menu_list" id="menuPicture">
+                                <a href="javascript:void(0)"
                                     ><figure><img src="/resources/images/Photos.png" alt="" /></figure
                                 ></a>
                                 <p>사진</p>
                             </li>
-                            <li>
-                                <a href="#!"
+                            <li class="menu_list" id="menuContact">
+                                <a href="javascript:void(0)"
                                     ><figure><img src="/resources/images/Contacts.png" alt="" /></figure
                                 ></a>
                                 <p>연락처</p>
                             </li>
-                            <li>
-                                <a href="#!"
-                                    ><figure><img src="/resources/images/Messages.png" alt="" /></figure
+                            <li class="menu_list" id="menuLive">
+                                <a href="javascript:void(0)"
+                                    ><figure><img src="/resources/images/live.png" alt="" /></figure
                                 ></a>
-                                <p>메세지</p>
+                                <p>라이브</p>
                             </li>
-
-                            <!-- 인스타그램/ 유튜브 추가 -->
+                            <li class="">
+                                <a href="https://www.youtube.com/@KimSuyoung" target="_blank"
+                                    ><figure><img src="/resources/images/Youtube.png" alt="" /></figure
+                                ></a>
+                                <p>Youtube</p>
+                            </li>
+                            <li class="">
+                                <a href="https://www.instagram.com/itsuyoung" target="_blank"
+                                    ><figure><img src="/resources/images/instagram.png" alt="" /></figure
+                                ></a>
+                                <p>Instagram</p>
+                            </li>
                         </ul>
                     </div>
 
-                    <div id="safari" class="safari"></div>
+                    <div class="menu_default">
+                        <ul>
+                            <li>
+                                <a href="#!">
+                                    <img src="/resources/images/Phone.png" alt="" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#!">
+                                    <img src="/resources/images/Messages.png" alt="" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://open.kakao.com/o/gnLogFK" target="_blank">
+                                    <img src="/resources/images/kakaotalk.png" alt="" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#!">
+                                    <img src="/resources/images/Settings.png" alt="" />
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div id="browser" class="browser"></div>
                 </div>
             </div>
         </main>
+
+        <div id="albumThumb"></div>
     </body>
 </html>

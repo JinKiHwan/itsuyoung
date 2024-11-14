@@ -1,5 +1,23 @@
 <div class="safari_top">
-    <div class="safari_close"><a href="#!"> Close</a></div>
-
+    <div class="browser_close" onclick="browserClose()"><a href="#!"> Close</a></div>
     <span class="domain">itsuyoung.wiki</span>
 </div>
+
+<div class="safari_content">
+    <div class="safari_content_top"></div>
+</div>
+
+<script>
+    gsap.to('.box', {
+        // x: 50,
+        // stagger: 0.1,
+        // duration: 1,
+        // scrollTrigger: {
+        //     trigger: '.safari_content',
+        //     start: 'top center',
+        //     end: 'bottom center',
+        //     markers: true,
+        //     scrub: false,
+        // },
+    });
+</script>
