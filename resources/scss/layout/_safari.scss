@@ -136,8 +136,8 @@
             &.mbti {
                 font-size: 28px;
                 position: absolute;
-                left: 22px;
-                bottom: -45px;
+                left: 62px;
+                bottom: -48px;
                 align-items: center;
 
                 dd {
@@ -148,7 +148,7 @@
                     img {
                         position: absolute;
                         right: -34px;
-                        top: 20px;
+                        top: 30px;
                         transform: rotate(-70deg);
                     }
                 }
@@ -360,6 +360,23 @@
                         font-size: 22px;
                         b {
                             font-weight: 600;
+                        }
+
+                        img {
+                            width: 20px;
+                        }
+
+                        a {
+                            display: flex;
+                            justify-content: flex-end;
+                            align-items: center;
+                            gap: 5px;
+
+                            color: blue;
+
+                            &:hover {
+                                text-decoration: underline;
+                            }
                         }
                     }
                 }
