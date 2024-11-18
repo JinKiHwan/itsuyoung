@@ -1,48 +1,23 @@
 <div class="album">
-  <a href="#!" class="album_close" onclick="browserClose('album') ">
-    <img src="/resources/images/album/close.svg" alt="" />
-  </a>
-
-  <div class="swiper albumSwiper">
-    <div class="swiper-wrapper"></div>
-  </div>
-
-  <div class="album_remote">
-    <a href="#!" class="swiper-button-prev">
-      <img src="/resources/images/album/prev.png" alt="" />
+    <a href="#!" class="album_close" onclick="browserClose('album') ">
+        <img src="/resources/images/album/close.svg" alt="" />
     </a>
-    <a href="#!" class="play_btn play"> </a>
-    <a href="#!" class="swiper-button-next">
-      <img src="/resources/images/album/next.png" alt="" />
-    </a>
-  </div>
+
+    <div class="swiper albumSwiper">
+        <div class="swiper-wrapper"></div>
+    </div>
+
+    <div class="album_remote">
+        <a href="#!" class="swiper-button-prev">
+            <img src="/resources/images/album/prev.png" alt="" />
+        </a>
+        <a href="#!" class="play_btn play"> </a>
+        <a href="#!" class="swiper-button-next">
+            <img src="/resources/images/album/next.png" alt="" />
+        </a>
+    </div>
+
+    <p class="album_notice">다른 브라우저에서 유튜브가 실행되고 있을 시<br />노래재생이 안될 수 있습니다.</p>
 </div>
 
-<script>
-  $('.swiper-button-next').click(function () {
-    //.albumSwiper .swiper-slide 에 data-youtube 값을 가져온다
-    let youtubeUrl = $('.albumSwiper .swiper-slide-active').data('youtube');
-
-    console.log(youtubeUrl);
-    //#albumMusic에 ifame이 있다면 empty한다.
-    if ($('#albumMusic iframe').length) {
-      $('#albumMusic').empty();
-    }
-    //#albumMusic에 iframe으로 해당 유튜브 URL을 로드한다.
-    $('#albumMusic').html('<iframe src=https://www.youtube.com/embed/' + youtubeUrl + '?rel=0?enablejsapi=1?autoplay=1></iframe>');
-  });
-
-  $('.play_btn').click(function () {
-    // #albumMusic 안에 iframe이 있는지 확인합니다.
-    let $iframe = $('#albumMusic iframe');
-    if ($iframe.length) {
-      // iframe이 있다면, iframe의 src 속성에 '?autoplay=1'를 추가해서 영상이 자동으로 재생되게 합니다.
-      let currentSrc = $iframe.attr('src');
-      $iframe.attr('src', currentSrc + '?autoplay=1');
-      console.log('ffff');
-    } else {
-      // iframe이 없다면, 아무 일도 일어나지 않습니다.
-      console.log('albumMusic에 iframe이 없습니다.');
-    }
-  });
-</script>
+<div id="albumMusic"></div>
