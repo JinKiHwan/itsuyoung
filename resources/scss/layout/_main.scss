@@ -144,10 +144,15 @@ body {
 
                 @include mobile {
                     padding: 0 3vw;
+                    gap: 15.5px;
                 }
 
                 li {
                     width: calc((100% / 4) - 12px);
+
+                    @include mobile {
+                        width: 76.25px;
+                    }
 
                     a {
                         display: block;
@@ -159,13 +164,13 @@ body {
                             display: flex;
                             align-items: center;
                             justify-content: center;
+                            height: 76.25px;
                         }
 
                         figure {
                             width: 100%;
                             height: 100%;
                             aspect-ratio: 1/1;
-
                             border-radius: 15px;
                             overflow: hidden;
                             transition: all 0.3s;
