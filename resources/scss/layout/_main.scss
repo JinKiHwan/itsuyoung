@@ -156,7 +156,6 @@ body {
                         padding: 8px 8px 6px 8px;
                         @include mobile {
                             padding: 8px;
-
                             display: flex;
                             align-items: center;
                             justify-content: center;
@@ -165,6 +164,8 @@ body {
                         figure {
                             width: 100%;
                             height: 100%;
+                            aspect-ratio: 1/1;
+
                             border-radius: 15px;
                             overflow: hidden;
                             transition: all 0.3s;
