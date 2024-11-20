@@ -211,9 +211,6 @@ function browserClose(type) {
 
 $('.menu_list').click(function () {
     let menuId = $(this).attr('id');
-
-    console.log(menuId);
-
     switch (menuId) {
         case 'menuSafari':
             $('#browser').load('/menu/safari.html', function () {
