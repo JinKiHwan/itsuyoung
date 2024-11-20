@@ -6,7 +6,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: #fff;
+    background: #357453;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,14 +14,12 @@
     opacity: 1;
     visibility: visible;
     transform: scale(1);
-    transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1), visibility 1s;
+    transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .loading-overlay.hidden {
     opacity: 0;
     visibility: hidden;
-    transform: scale(1.1); /* 살짝 확대되면서 사라지는 효과 */
-    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .loading-dots {
     display: flex;
@@ -32,7 +30,7 @@
 .dot {
     width: 20px;
     height: 20px;
-    margin: 0 5px;
+    margin: 0 15px;
     background: #3498db;
     border-radius: 50%;
     animation: jump 0.5s ease-in-out infinite;
@@ -46,6 +44,16 @@
     animation-delay: 0.2s;
 }
 
+.loading-img {
+    width: 350px;
+    padding: 45px 10px 10px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba($color: #000000, $alpha: 1);
+    animation: grayscale 2s ease-in-out forwards;
+    filter: grayscale(1);
+    transform-origin: left top;
+}
+
 @keyframes jump {
     0%,
     100% {
@@ -53,5 +61,22 @@
     }
     50% {
         transform: translateY(-20px);
+    }
+}
+@keyframes grayscale {
+    0% {
+        filter: grayscale(1);
+    }
+    70% {
+        filter: grayscale(0);
+        transform: rotate(0);
+    }
+    73% {
+        filter: grayscale(0);
+        transform: rotate(15deg);
+    }
+    100% {
+        filter: grayscale(0);
+        transform: rotate(15deg);
     }
 }

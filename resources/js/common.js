@@ -63,7 +63,7 @@ class ImageLoader {
 }
 
 // 사용
-const imageLoader = new ImageLoader(1000); // 1초 최소 로딩 시간
+const imageLoader = new ImageLoader(2000); // 1초 최소 로딩 시간
 
 /* ----------------------- */
 /* --widget 시간 업데이트 -- */
