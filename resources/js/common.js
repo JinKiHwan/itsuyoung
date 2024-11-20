@@ -1,3 +1,70 @@
+class ImageLoader {
+    constructor(minLoadingTime = 1000) {
+        this.loadingOverlay = document.querySelector('.loading-overlay');
+        this.minLoadingTime = minLoadingTime;
+        this.init();
+    }
+
+    init() {
+        this.startTime = Date.now();
+        this.showLoading();
+        this.checkImagesLoaded();
+    }
+
+    showLoading() {
+        // 이전에 추가된 hidden 클래스 제거
+        this.loadingOverlay.classList.remove('hidden');
+    }
+
+    hideLoading() {
+        const elapsedTime = Date.now() - this.startTime;
+        const remainingTime = Math.max(0, this.minLoadingTime - elapsedTime);
+
+        setTimeout(() => {
+            this.loadingOverlay.style.opacity = '0';
+
+            // opacity 트랜지션이 완료된 후 hidden 클래스 추가
+            this.loadingOverlay.addEventListener(
+                'transitionend',
+                () => {
+                    this.loadingOverlay.classList.add('hidden');
+                },
+                { once: true }
+            ); // 이벤트 리스너를 한 번만 실행
+        }, remainingTime);
+    }
+
+    checkImagesLoaded() {
+        const images = document.querySelectorAll('img');
+        const totalImages = images.length;
+        let loadedImages = 0;
+
+        if (totalImages === 0) {
+            this.hideLoading();
+            return;
+        }
+
+        const imageLoaded = () => {
+            loadedImages++;
+            if (loadedImages === totalImages) {
+                this.hideLoading();
+            }
+        };
+
+        images.forEach((img) => {
+            if (img.complete) {
+                imageLoaded();
+            } else {
+                img.addEventListener('load', imageLoaded);
+                img.addEventListener('error', imageLoaded);
+            }
+        });
+    }
+}
+
+// 사용
+const imageLoader = new ImageLoader(1000); // 1초 최소 로딩 시간
+
 /* ----------------------- */
 /* --widget 시간 업데이트 -- */
 /* ----------------------- */
