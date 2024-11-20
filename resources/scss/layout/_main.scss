@@ -25,6 +25,10 @@ body {
         right: 50px;
         bottom: 50px;
         z-index: -1;
+
+        @include mobile {
+            display: none;
+        }
     }
 
     .overlay {
@@ -36,6 +40,9 @@ body {
         z-index: -1;
         background-image: url('/resources/images/overlay.gif');
         opacity: 0.05;
+        @include mobile {
+            display: none;
+        }
     }
 
     .iphone {
@@ -45,6 +52,15 @@ body {
         border-radius: 30px;
         overflow: hidden;
         position: relative;
+
+        @include mobile {
+            aspect-ratio: auto;
+            width: 100%;
+            height: 100%;
+            max-width: 1024px;
+            padding: 0;
+            border-radius: 0;
+        }
 
         &::after {
             content: '';
@@ -57,6 +73,10 @@ body {
             display: block;
             pointer-events: none;
             z-index: 99;
+
+            @include mobile {
+                display: none;
+            }
         }
 
         &::before {
@@ -71,6 +91,10 @@ body {
             pointer-events: none;
             z-index: -10;
             filter: drop-shadow(2px 4px 6px black);
+
+            @include mobile {
+                display: none;
+            }
         }
     }
 
@@ -83,6 +107,11 @@ body {
         overflow: hidden;
         position: relative;
         z-index: 0;
+
+        @include mobile {
+            border-radius: 0;
+        }
+
         &::after {
             content: '';
             width: 100%;
@@ -98,6 +127,11 @@ body {
             width: 100%;
             height: 100%;
             padding-top: 100px;
+
+            @include mobile {
+                padding-top: 15vw;
+            }
+
             ul {
                 width: 100%;
                 display: flex;
@@ -107,6 +141,10 @@ body {
                 gap: 16px;
                 perspective: 1000px;
 
+                @include mobile {
+                    padding: 0 3vw;
+                }
+
                 li {
                     width: calc((100% / 4) - 12px);
                     a {
@@ -114,6 +152,9 @@ body {
                         width: 100%;
                         aspect-ratio: 1/1;
                         padding: 8px 8px 6px 8px;
+                        @include mobile {
+                            padding: 8px;
+                        }
 
                         figure {
                             width: 100%;
@@ -142,6 +183,9 @@ body {
                         text-align: center;
                         margin-bottom: 5px;
                         text-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.5);
+                        @include mobile {
+                            font-size: 16px;
+                        }
                     }
                 }
             }
@@ -158,6 +202,11 @@ body {
         display: flex;
         justify-content: space-between;
         align-items: center;
+
+        @include mobile {
+            top: 3vw;
+            padding: 0 3vw;
+        }
 
         &_icons {
             display: flex;
@@ -201,11 +250,18 @@ body {
             transform: translateX(-50%);
             text-align: center;
             color: #fff;
+
+            @include mobile {
+                top: 35vw;
+            }
         }
 
         #lock_date {
             font-family: apple600;
             margin-bottom: 15px;
+            @include mobile {
+                font-size: 18px;
+            }
         }
         #lock_clock {
             font-family: apple700;
