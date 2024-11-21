@@ -52,7 +52,7 @@
                             </figure>
                         </div>
                     </div>
-                    <div class="lock" onclick="unLock()">
+                    <div class="lock" hidden onclick="unLock()">
                         <div class="lock_wrap">
                             <div class="lock_time">
                                 <div id="lock_date"></div>
@@ -137,6 +137,12 @@
         </main>
 
         <div id="albumThumb"></div>
+        <div class="live_fixed">
+            <a href="javascript:void(0)" class="live_closeBtn">
+                <img src="/resources/images/live/close.png" alt="" />
+            </a>
+            <article class="live_iframe"></article>
+        </div>
     </body>
 
     <script>

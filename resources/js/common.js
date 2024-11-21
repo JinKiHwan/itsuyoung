@@ -1,3 +1,6 @@
+/* -------------------------*/
+/* ----- [s]로딩 페이지 -----*/
+/* ------------------------*/
 class ImageLoader {
     constructor(minLoadingTime = 1000) {
         this.loadingOverlay = document.querySelector('.loading-overlay');
@@ -65,8 +68,12 @@ class ImageLoader {
 // 사용
 const imageLoader = new ImageLoader(2000); // 1초 최소 로딩 시간
 
+/* -------------------------*/
+/* ----- [e]로딩 페이지 -----*/
+/* ------------------------*/
+
 /* ----------------------- */
-/* --widget 시간 업데이트 -- */
+/* -[s]widget 시간 업데이트- */
 /* ----------------------- */
 function updateTime() {
     const now = new Date();
@@ -88,6 +95,10 @@ setInterval(updateTime, 1000);
 
 // 초기 로드시 즉시 시간 표시
 updateTime();
+
+/* ----------------------- */
+/* -[e]widget 시간 업데이트- */
+/* ----------------------- */
 
 /* ------------------------- */
 /* --- [s]Lock 해제 버튼  --- */
@@ -128,7 +139,6 @@ function unLock() {
 /* ----------------------------*/
 /* ---- [s]브라우저 온/오프 ---- */
 /* ---------------------------*/
-//$('#browserPicture').load('/menu/picture.html');
 
 let browserBtn = false;
 
@@ -247,8 +257,10 @@ $('.menu_list').click(function () {
             });
             //browserOpen('type2');
             break;
-        case 'menuContact':
-            $('#browser').load('/menu/contact.html');
+        case 'menuLive':
+            $('#browser').load('/menu/live.html', function () {
+                liveIframe();
+            });
             browserOpen('type1');
             break;
         case 'menuMessage':
@@ -520,13 +532,13 @@ function albumPlayer() {
     }
 }
 
-/* ------------------------ */
+/* ------------------------*/
 /* ---- [e]앨범 스와이퍼 ----*/
-/* ------------------------ */
+/* ------------------------*/
 
-/* ------------------------ */
+/* ------------------------*/
 /* ---- [s]사진 스와이퍼 ----*/
-/* ------------------------ */
+/* ------------------------*/
 
 let pictureArr = [];
 $.ajax({
@@ -645,3 +657,33 @@ function pictureSwiper(type) {
 /* ------------------------ */
 /* ---- [e]사진 스와이퍼 ----*/
 /* ------------------------ */
+
+/* ------------------------- */
+/* ----[s]라이브 function-----*/
+/* ------------------------- */
+function liveIframe() {
+    const $liveIframe = $('.live_iframe');
+    const $liveFixed = $('.live_fixed');
+
+    $('.live_wrap_archive li').click(function () {
+        const liveId = $(this).attr('data-live');
+
+        // 1. $liveIframe 비우기
+        $liveIframe.empty();
+
+        // 2. iframe 엘리먼트 생성 및 추가
+        const iframe = $(`<iframe src="https://www.youtube.com/embed/${liveId}"></iframe>`);
+        $liveIframe.append(iframe);
+
+        // 3. show 클래스 추가
+        $liveFixed.addClass('show');
+    });
+
+    $('.live_closeBtn').click(function () {
+        $liveIframe.empty();
+        $liveFixed.removeClass('show');
+    });
+}
+/* ------------------------- */
+/* ----[e]라이브 function-----*/
+/* ------------------------- */
