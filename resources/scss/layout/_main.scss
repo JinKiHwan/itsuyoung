@@ -355,6 +355,10 @@ body {
   //animation: qwe infinite linear 1s;
   -webkit-animation: squiggly-anim 0.9s linear infinite;
   animation: squiggly-anim 0.9s linear infinite;
+
+  @include mobile {
+    display: none;
+  }
 }
 
 .cursor.active {
