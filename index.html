@@ -1,161 +1,191 @@
 <!DOCTYPE html>
 <html lang="ko">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-        <title></title>
-        <!-- META -->
-        <meta property="og:title" content="" />
-        <meta property="og:url" content="" />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content="" />
-        <meta property="og:description" content="" />
-        <meta name="description" content="" />
-        <!-- FAVICON -->
-        <link rel="shortcut icon" type="image/x-icon" href="./resources/images/favicon.png" />
-        <link rel="icon" type="image/x-icon" href="./resources/images/favicon.png" />
-        <!-- CSS -->
-        <link rel="stylesheet" href="./resources/css/style.min.css" />
-        <!-- SCRIPT -->
-        <script defer src="https://www.youtube.com/iframe_api"></script>
-        <script defer src="./resources/js/jquery.min.js"></script>
-        <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-        <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-        <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-        <script defer src="./resources/js/common.js"></script>
-    </head>
-    <body>
-        <div class="loading-overlay">
-            <div class="loading-img">
-                <figure>
-                    <img src="/resources/images/loading/loading_img.jpg" alt="" />
-                </figure>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title></title>
+    <!-- META -->
+    <meta property="og:title" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="" />
+    <meta property="og:description" content="" />
+    <meta name="description" content="" />
+    <!-- FAVICON -->
+    <link rel="shortcut icon" type="image/x-icon" href="./resources/images/favicon.png" />
+    <link rel="icon" type="image/x-icon" href="./resources/images/favicon.png" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="./resources/css/style.min.css" />
+    <!-- SCRIPT -->
+    <script defer src="https://www.youtube.com/iframe_api"></script>
+    <script defer src="./resources/js/jquery.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script defer src="./resources/js/common.js"></script>
+  </head>
+  <body>
+    <div class="loading-overlay">
+      <div class="loading-img">
+        <figure>
+          <img src="/resources/images/loading/loading_img.jpg" alt="" />
+        </figure>
+      </div>
+    </div>
+
+    <main class="main">
+      <div class="overlay"></div>
+      <div class="iphone">
+        <div class="content">
+          <div class="widget">
+            <div id="clock"></div>
+            <div class="widget_icons">
+              <figure>
+                <img src="/resources/images/Cellular.png" alt="" />
+              </figure>
+              <figure>
+                <img src="/resources/images/Wifi.png" alt="" />
+              </figure>
+              <figure>
+                <img src="/resources/images/Battery.png" alt="" />
+              </figure>
             </div>
-        </div>
-
-        <main class="main">
-            <div class="overlay"></div>
-            <div class="iphone">
-                <div class="content">
-                    <div class="widget">
-                        <div id="clock"></div>
-                        <div class="widget_icons">
-                            <figure>
-                                <img src="/resources/images/Cellular.png" alt="" />
-                            </figure>
-                            <figure>
-                                <img src="/resources/images/Wifi.png" alt="" />
-                            </figure>
-                            <figure>
-                                <img src="/resources/images/Battery.png" alt="" />
-                            </figure>
-                        </div>
-                    </div>
-                    <div class="lock" onclick="unLock()">
-                        <div class="lock_wrap">
-                            <div class="lock_time">
-                                <div id="lock_date"></div>
-                                <div id="lock_clock"></div>
-                            </div>
-                            <div class="lock_btn">Click Here!</div>
-                        </div>
-                    </div>
-                    <div class="menu">
-                        <ul class="menu_wrap">
-                            <li class="menu_list" id="menuSafari">
-                                <a href="javascript:void(0)">
-                                    <figure>
-                                        <img src="/resources/images/goodnote.png" alt="" />
-                                    </figure>
-                                </a>
-                                <p>김수영</p>
-                            </li>
-                            <li class="menu_list" id="menuAlbum">
-                                <a href="javascript:void(0)"
-                                    ><figure>
-                                        <img src="/resources/images/Music.png" alt="" /></figure
-                                ></a>
-                                <p>노래</p>
-                            </li>
-                            <li class="menu_list" id="menuPicture">
-                                <a href="javascript:void(0)"
-                                    ><figure><img src="/resources/images/Photos.png" alt="" /></figure
-                                ></a>
-                                <p>사진</p>
-                            </li>
-                            <li class="menu_list" id="menuLive">
-                                <a href="javascript:void(0)"
-                                    ><figure><img src="/resources/images/live.png" alt="" /></figure
-                                ></a>
-                                <p>라이브</p>
-                            </li>
-                            <li class="">
-                                <a href="https://www.youtube.com/@KimSuyoung" target="_blank"
-                                    ><figure><img src="/resources/images/Youtube.png" alt="" /></figure
-                                ></a>
-                                <p>Youtube</p>
-                            </li>
-                            <li class="">
-                                <a href="https://www.instagram.com/itsuyoung" target="_blank"
-                                    ><figure><img src="/resources/images/instagram.png" alt="" /></figure
-                                ></a>
-                                <p>Instagram</p>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="menu_default">
-                        <ul>
-                            <li>
-                                <a href="#!">
-                                    <img src="/resources/images/Phone.png" alt="" />
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#!">
-                                    <img src="/resources/images/Messages.png" alt="" />
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://open.kakao.com/o/gnLogFK" target="_blank">
-                                    <img src="/resources/images/kakaotalk.png" alt="" />
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#!">
-                                    <img src="/resources/images/Settings.png" alt="" />
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div id="browser" class="browser"></div>
-                    <div id="browserPicture" class="browser"></div>
-                </div>
+          </div>
+          <div class="lock" onclick="unLock()">
+            <div class="lock_wrap">
+              <div class="lock_time">
+                <div id="lock_date"></div>
+                <div id="lock_clock"></div>
+              </div>
+              <div class="lock_btn">Click Here!</div>
             </div>
-        </main>
+          </div>
+          <div class="menu">
+            <ul class="menu_wrap">
+              <li class="menu_list" id="menuSafari">
+                <a href="javascript:void(0)">
+                  <figure>
+                    <img src="/resources/images/goodnote.png" alt="" />
+                  </figure>
+                </a>
+                <p>김수영</p>
+              </li>
+              <li class="menu_list" id="menuAlbum">
+                <a href="javascript:void(0)"
+                  ><figure>
+                    <img src="/resources/images/Music.png" alt="" /></figure
+                ></a>
+                <p>노래</p>
+              </li>
+              <li class="menu_list" id="menuPicture">
+                <a href="javascript:void(0)"
+                  ><figure><img src="/resources/images/Photos.png" alt="" /></figure
+                ></a>
+                <p>사진</p>
+              </li>
+              <li class="menu_list" id="menuLive">
+                <a href="javascript:void(0)"
+                  ><figure><img src="/resources/images/live.png" alt="" /></figure
+                ></a>
+                <p>라이브</p>
+              </li>
+              <li class="">
+                <a href="https://www.youtube.com/@KimSuyoung" target="_blank"
+                  ><figure><img src="/resources/images/Youtube.png" alt="" /></figure
+                ></a>
+                <p>Youtube</p>
+              </li>
+              <li class="">
+                <a href="https://www.instagram.com/itsuyoung" target="_blank"
+                  ><figure><img src="/resources/images/instagram.png" alt="" /></figure
+                ></a>
+                <p>Instagram</p>
+              </li>
+            </ul>
+          </div>
 
-        <div id="albumThumb"></div>
-        <div class="live_fixed">
-            <a href="javascript:void(0)" class="live_closeBtn">
-                <img src="/resources/images/live/close.png" alt="" />
-            </a>
-            <article class="live_iframe"></article>
+          <div class="menu_default">
+            <ul>
+              <li>
+                <a href="#!">
+                  <img src="/resources/images/Phone.png" alt="" />
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <img src="/resources/images/Messages.png" alt="" />
+                </a>
+              </li>
+              <li>
+                <a href="https://open.kakao.com/o/gnLogFK" target="_blank">
+                  <img src="/resources/images/kakaotalk.png" alt="" />
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <img src="/resources/images/Settings.png" alt="" />
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div id="browser" class="browser"></div>
+          <div id="browserPicture" class="browser"></div>
         </div>
-    </body>
+      </div>
+    </main>
 
-    <script>
-        // YouTube IFrame API 스크립트 추가
+    <div id="albumThumb"></div>
+    <div class="live_fixed">
+      <a href="javascript:void(0)" class="live_closeBtn">
+        <img src="/resources/images/live/close.png" alt="" />
+      </a>
+      <article class="live_iframe"></article>
+    </div>
 
-        if (!window.YT) {
-            // YT 객체가 없을 때만 스크립트 추가
-            const tag = document.createElement('script');
-            tag.src = 'https://www.youtube.com/iframe_api';
-            const firstScriptTag = document.getElementsByTagName('script')[0];
-            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-        }
+    <div class="cursor"></div>
 
-        let player;
-    </script>
+    <!-- svg필터 -->
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display: none">
+      <defs>
+        <filter id="squiggly-0">
+          <feTurbulence id="turbulence" baseFrequency="0.009" numOctaves="10" result="noise" seed="0" />
+          <feDisplacementMap id="displacement" in="SourceGraphic" in2="noise" scale="6" />
+        </filter>
+        <filter id="squiggly-1">
+          <feTurbulence id="turbulence" baseFrequency="0.009" numOctaves="10" result="noise" seed="1" />
+          <feDisplacementMap in="SourceGraphic" in2="noise" scale="8" />
+        </filter>
+
+        <filter id="squiggly-2">
+          <feTurbulence id="turbulence" baseFrequency="0.009" numOctaves="10" result="noise" seed="2" />
+          <feDisplacementMap in="SourceGraphic" in2="noise" scale="6" />
+        </filter>
+        <filter id="squiggly-3">
+          <feTurbulence id="turbulence" baseFrequency="0.009" numOctaves="10" result="noise" seed="3" />
+          <feDisplacementMap in="SourceGraphic" in2="noise" scale="8" />
+        </filter>
+
+        <filter id="squiggly-4">
+          <feTurbulence id="turbulence" baseFrequency="0.009" numOctaves="10" result="noise" seed="4" />
+          <feDisplacementMap in="SourceGraphic" in2="noise" scale="6" />
+        </filter>
+      </defs>
+    </svg>
+  </body>
+
+  <script>
+    // YouTube IFrame API 스크립트 추가
+
+    if (!window.YT) {
+      // YT 객체가 없을 때만 스크립트 추가
+      const tag = document.createElement('script');
+      tag.src = 'https://www.youtube.com/iframe_api';
+      const firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    }
+
+    let player;
+  </script>
 </html>
