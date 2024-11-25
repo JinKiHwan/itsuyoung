@@ -107,7 +107,7 @@ function unLock() {
     const lock = document.querySelector('.lock');
     const menuList = gsap.utils.toArray('.menu_wrap li');
 
-    console.log(menuList);
+    //console.log(menuList);
 
     const tl = gsap.timeline();
     tl.set(menuList, {
@@ -244,7 +244,7 @@ $('.menu_list').click(function () {
                         setTimeout(() => {
                             width = $('.albumSwiper .swiper-slide').width();
                             $('#albumThumb').css('width', width);
-                            console.log('지연 후 width 설정:', width);
+                            //console.log('지연 후 width 설정:', width);
                         }, 100);
                     }
                 });
@@ -548,7 +548,7 @@ $.ajax({
     success: function (data) {
         pictureArr = data.pictures;
 
-        console.log(pictureArr);
+        //console.log(pictureArr);
     },
 });
 
@@ -560,7 +560,7 @@ $.ajax({
     success: function (data) {
         pictureArr2 = data.picture2;
 
-        console.log(pictureArr2);
+        //console.log(pictureArr2);
     },
 });
 
@@ -665,18 +665,22 @@ function liveIframe() {
     const $liveIframe = $('.live_iframe');
     const $liveFixed = $('.live_fixed');
 
-    $('.live_wrap_archive li').click(function () {
+    $('.live_wrap_archive li.data-live').click(function () {
         const liveId = $(this).attr('data-live');
 
-        // 1. $liveIframe 비우기
-        $liveIframe.empty();
+        if (liveId) {
+            // 1. $liveIframe 비우기
+            $liveIframe.empty();
 
-        // 2. iframe 엘리먼트 생성 및 추가
-        const iframe = $(`<iframe src="https://www.youtube.com/embed/${liveId}"></iframe>`);
-        $liveIframe.append(iframe);
+            // 2. iframe 엘리먼트 생성 및 추가
+            const iframe = $(`<iframe src="https://www.youtube.com/embed/${liveId}"></iframe>`);
+            $liveIframe.append(iframe);
 
-        // 3. show 클래스 추가
-        $liveFixed.addClass('show');
+            // 3. show 클래스 추가
+            $liveFixed.addClass('show');
+        } else {
+            return;
+        }
     });
 
     $('.live_closeBtn').click(function () {
